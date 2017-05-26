@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				float: left;
+				margin-top: 50px;
+				margin-left: 10px;
+				width: 20px;height: 20px;
+				border-radius: 50%;
+				background: #FD482C;
+				
+				
+			}
+			div:first-child{
+				animation:move 1s ease-in 100ms infinite;
+			}
+			div:nth-of-type(2){
+				animation:move 1s ease-in 200ms infinite;
+			}
+			div:nth-of-type(3){
+				animation:move 1s ease-in 300ms infinite;
+			}
+			@keyframes move{
+				0%{
+					transform: scale(0);
+				}
+				50%{
+					transform: scale(1);
+				}
+				100%{
+					transform: scale(0);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<div></div>
+		<div></div>
+	</body>
+</html>

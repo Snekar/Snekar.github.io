@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{margin: 0;padding: 0;list-style: none;box-sizing: border-box;}
+			div{
+				perspective: 500px;				/*查看的距离*/
+				perspective-origin: left top;   /*查看的方位*/
+				
+				width: 200px;margin: 300px auto;
+			}
+			ul{
+				position: relative;
+				transform: rotateY(60deg);   /*ul沿着Y轴旋转60度*/
+				width: 200px;height: 200px;
+				
+				transform-style: preserve-3d;  
+				
+				animation: move 10s ease-in infinite;
+			}
+			
+			li{
+				position: absolute;left: 0;top: 0;
+				width: 200px;height: 200px;
+				line-height: 200px;text-align: center;
+				
+				backface-visibility: hidden;   /*背面不显示*/
+			}
+			
+			li:nth-of-type(1){
+				transform: translate3d(0,0,100px);
+				background: #f00;
+			}
+			li:nth-of-type(2){
+				transform: rotateY(180deg) translate3d(0,0,100px);
+				background: #ff0;
+			}
+			li:nth-of-type(3){
+				transform: rotateY(-90deg) translate3d(0,0,100px);
+				background: #00f;
+			}
+			li:nth-of-type(4){
+				transform: rotateY(90deg) translate3d(0,0,100px);
+				background: #0f0;
+			}
+			li:nth-of-type(5){
+				transform: rotateX(90deg) translate3d(0,0,100px);
+				background: #f0f;
+			}
+			li:nth-of-type(6){
+				transform: rotateX(-90deg) translate3d(0,0,100px);
+				background: #0ff;
+			}
+			@keyframes move{  /*切记 要加单位*/
+				0%{
+					transform: rotateX(0) rotateY(0)
+				}
+				25%{
+					transform: rotateX(360deg) rotateY(0)
+				}
+				50%{
+					transform: rotateX(360deg) rotateY(360deg)
+				}
+				75%{
+					transform: rotateX(360deg) rotateY(0)
+				}
+				100%{
+					transform: rotateX(0) rotateY(0)
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<ul>
+				<li>正面</li>
+				<li>背面</li>
+				<li>左面</li>
+				<li>右面</li>
+				<li>上面</li>
+				<li>下面</li>
+			</ul>
+		</div>
+	</body>
+</html>

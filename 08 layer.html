@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button>
+			点击
+		</button>
+		<script src="http://cdn.bootcss.com/jquery/1.12.3/jquery.min.js"></script>
+		<script src="layer/layer.js"></script>
+		<script>
+			var btn = document.querySelector('button');
+			btn.onclick = function(){
+//				//询问框
+//				layer.confirm('您是如何看待前端开发？', {
+//				  btn: ['重要','奇葩'] //按钮
+//				}, function(){
+//				  layer.msg('的确很重要', {icon: 1});
+//				}, function(){
+//				  layer.msg('也可以这样', {
+//				    time: 20000, //20s后自动关闭
+//				    btn: ['明白了', '知道了']
+//				  });
+//				});
+//				//提示层
+//					layer.msg('玩命提示中...');
+					
+					//prompt层
+						layer.prompt({title: '输入任何口令，并确认', formType: 1}, function(pass, index){
+						  layer.close(index);
+						  layer.prompt({title: '随便写点啥，并确认', formType: 2}, function(text, index){
+						    layer.close(index);
+						    layer.msg('演示完毕！您的口令：' + pass + '您最后写下了：'+text);
+						  });
+						});
+			}
+		</script>
+	</body>
+</html>

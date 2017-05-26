@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width: 200px;height: 200px;
+				border-radius:50% ;background: #f00;
+				
+				animation: move 2S ease-in infinite;
+			}
+			@keyframes move{
+				0%{
+					transform: scale(0);
+					opacity: 0;
+				}
+				25%{
+					transform: scale(0.5);
+					opacity: 0.5;
+				}
+				50%{
+					transform: scale(1);
+					opacity: 1;
+				}
+				75%{
+					transform: scale(0.5);
+					opacity: 0.5;
+				}
+				90%{
+					transform: scale(0.2);
+					opacity: 0.2;
+				}
+				100%{
+					opacity: 0;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+	</body>
+</html>

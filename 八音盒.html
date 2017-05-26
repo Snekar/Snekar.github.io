@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			
+			*{margin: 0;padding: 0;list-style: none;box-sizing: border-box;}
+			div{
+				perspective: 500px;				/*查看的距离*/
+				perspective-origin: right;   /*查看的方位*/
+				
+				width: 200px;margin: 150px auto;
+			}
+			ul{
+				position: relative;
+				transform: rotateY(60deg);   /*ul沿着Y轴旋转60度*/
+				width: 200px;height: 200px;
+				
+				transform-style: preserve-3d;  
+				
+				animation: move 10s ease-in infinite;
+			}
+			
+			ul:hover{
+				animation-play-state: paused;
+			}
+			li{
+				position: absolute;left: 0;top: 0;
+				width: 200px;height: 200px;
+				line-height: 200px;text-align: center;
+				
+			/*	backface-visibility: hidden;   背面不显示*/
+			}
+			li:nth-of-type(1){
+				transform: translate3d(0,0,100px);
+				background: #007AFF;
+			}
+			li:nth-of-type(2){
+				transform: rotateY(180deg)translate3d(0,0,380px);
+				background: #f0f;
+			}
+			li:nth-of-type(3){
+				transform: rotateY(45deg)translate3d(100px,0,140px);
+				background: #A71D5D;
+			}
+			li:nth-of-type(4){
+				transform: rotateY(-45deg)translate3d(-100px,0,140px);
+				background: #f00;
+			}
+			li:nth-of-type(5){
+				transform: rotateY(90deg)translate3d(140px,0,240px);
+				background: #f00;
+			}
+			li:nth-of-type(6){
+				transform: rotateY(-90deg)translate3d(-140px,0,240px);
+				background: #f00;
+			}
+			li:nth-of-type(7){
+				transform: rotateY(135deg)translate3d(100px,0,340px);
+				background: #f00;
+			}
+			li:nth-of-type(8){
+				transform: rotateY(-135deg)translate3d(-100px,0,340px);
+				background: #f00;
+			}
+			
+			@keyframes move{
+				0%{
+					transform: rotateX(-30deg) rotateY(0);
+				}
+				
+				50%{
+					transform: rotateX(-30deg) rotateY(360deg);
+				}
+				
+				100%{
+					transform: rotateX(-30deg) rotateY(0);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<ul>
+				<li>A</li>
+				<li>B</li>
+				<li>C</li>
+				<li>D</li>
+				<li>E</li>
+				<li>F</li>
+				<li>G</li>
+				<li>H</li>
+			</ul>
+		</div>
+	</body>
+</html>
